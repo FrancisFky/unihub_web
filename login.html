@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - UniHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      height: auto;
+      overflow: auto;
+    }
+
+    .login-container {
+      display: flex;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .login-left {
+      flex: 1;
+      background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.86), rgba(37, 99, 235, 0.72)),
+        url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 2rem;
+    }
+
+    .login-left-content {
+      text-align: center;
+      max-width: 400px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 1.25rem;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+    }
+
+    .login-left h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .login-left p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+    }
+
+    .login-left-icon {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .login-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(20, 184, 166, 0.14), transparent 18rem),
+        var(--bg-secondary);
+    }
+
+    .login-form {
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .login-header h2 {
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .login-header p {
+      color: var(--text-secondary);
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .login-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .login-actions a {
+      font-size: 0.9rem;
+    }
+
+    .login-actions label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .login-actions input[type="checkbox"] {
+      width: auto;
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .login-divider {
+      display: flex;
+      align-items: center;
+      margin: 1.5rem 0;
+      color: var(--text-tertiary);
+    }
+
+    .login-divider:before,
+    .login-divider:after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: var(--border-color);
+    }
+
+    .login-divider span {
+      padding: 0 1rem;
+    }
+
+    .login-social {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-btn {
+      flex: 1;
+      padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-primary);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .social-btn:hover {
+      background-color: var(--bg-tertiary);
+      transform: translateY(-2px);
+    }
+
+    .login-footer {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .login-footer a {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    .top-right-controls {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .login-container {
+        flex-direction: column;
+      }
+
+      .login-left {
+        display: none;
+      }
+
+      .login-right {
+        min-height: 100vh;
+        padding: 5rem 1rem 2rem;
+      }
+
+      .login-form {
+        padding: 1.5rem;
+      }
+
+      .top-right-controls {
+        top: 1rem;
+        right: 1rem;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to Main Content Link -->
+  <a href="#login-form" class="skip-link">Skip to login form</a>
+
+  <!-- Top Controls -->
+  <div class="top-right-controls">
+    <label for="language-select" class="sr-only">Select language:</label>
+    <select id="language-select" aria-label="Select language" style="padding: 0.5rem; border-radius: 0.25rem; border: 2px solid var(--border-color); background-color: var(--bg-primary); color: var(--text-primary); cursor: pointer;">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+    </select>
+    <button id="theme-toggle" class="navbar-icon-btn" style="position: relative;" aria-label="Toggle dark mode">
+      <i class="fas fa-moon" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="login-container">
+    <div class="login-left" aria-hidden="true">
+      <div class="login-left-content">
+        <div class="login-left-icon">
+          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+        </div>
+        <h1>UniHub</h1>
+        <p data-i18n="landing.hero.subtitle"></p>
+      </div>
+    </div>
+
+    <main class="login-right" role="main">
+      <form class="login-form" id="login-form" onsubmit="handleLogin(event)" novalidate>
+        <div class="login-header">
+          <h1 data-i18n="common.login"></h1>
+          <p data-i18n="common.welcome"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="email" data-i18n="common.email"></label>
+          <input type="email" id="email" name="email" placeholder="exemple@univ.com" required aria-describedby="email-help">
+          <small id="email-help" style="color: var(--text-tertiary); display: block; margin-top: 0.25rem;">Enter your university email address</small>
+        </div>
+
+        <div class="form-group">
+          <label for="password" data-i18n="common.password"></label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required aria-describedby="password-help">
+          <small id="password-help" style="color: var(--text-tertiary); display: block; margin-top: 0.25rem;">Minimum 6 characters</small>
+        </div>
+
+        <div class="login-actions">
+          <label>
+            <input type="checkbox" id="remember" name="remember" aria-label="Remember me on this device"> <span data-i18n="common.rememberMe"></span>
+          </label>
+          <a href="#" data-i18n="common.forgotPassword" aria-label="Forgot password"></a>
+        </div>
+
+        <button type="submit" class="btn btn-primary login-button" data-i18n="common.login"></button>
+
+        <div class="login-divider" aria-hidden="true">
+          <span>Or</span>
+        </div>
+
+        <div class="login-footer">
+          <p data-i18n-html="common.register"></p>
+          <p style="margin-top: 0.5rem;">
+            <a href="index.html">← <span data-i18n="common.back"></span></a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Professional Footer -->
+  <footer class="footer" role="contentinfo" style="margin-top: auto;">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>UniHub</h4>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">Modern education platform</p>
+      </div>
+      <div class="footer-section">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/index.html">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 UniHub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/data/mock-data.js"></script>
+  <script src="/js/language.js"></script>
+  <script src="/js/theme.js"></script>
+  <script src="/js/script.js"></script>
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Mock authentication - in production, this would call an API
+      if (email && password) {
+        // Store mock user and redirect to role selection
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('currentEmail', email);
+        window.location.href = 'role-selection.html';
+      }
+    }
+  </script>
+</body>
+</html>
