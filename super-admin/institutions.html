@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institutions - UniHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand"><i class="fas fa-graduation-cap"></i><span>UniHub</span></div>
+    <div class="navbar-nav">
+      <button id="hamburger" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer;"><i class="fas fa-bars"></i></button>
+      <button id="theme-toggle" class="navbar-icon-btn"><i class="fas fa-moon"></i></button>
+      <div class="dropdown">
+        <button id="user-button" class="navbar-icon-btn"><img src="https://api.dicebear.com/7.x/avataaars/svg?seed=SuperAdmin" style="width: 36px; height: 36px; border-radius: 50%;"></button>
+        <div id="user-menu" class="dropdown-menu">
+          <button class="dropdown-item" onclick="logout()" data-i18n="common.logout"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <button id="close-sidebar"><i class="fas fa-times"></i></button>
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="../super-admin/dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="../super-admin/institutions.html"><i class="fas fa-building"></i> Institutions</a></li>
+        <li><a href="../super-admin/subscriptions.html"><i class="fas fa-credit-card"></i> Subscriptions</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main-container">
+    <div class="main-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h1>Gestion des Institutions</h1>
+        <button class="btn btn-primary"><i class="fas fa-plus"></i> Ajouter Institution</button>
+      </div>
+
+      <div class="card">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Pays</th>
+              <th>Ville</th>
+              <th>Étudiants</th>
+              <th>Abonnement</th>
+              <th>Statut</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Université de Brazzaville</td>
+              <td>Congo-Brazzaville</td>
+              <td>Brazzaville</td>
+              <td>5,000</td>
+              <td>Premium</td>
+              <td><span class="badge-pill badge-success">Actif</span></td>
+            </tr>
+            <tr>
+              <td>Université de Kinshasa</td>
+              <td>République Démocratique du Congo</td>
+              <td>Kinshasa</td>
+              <td>8,000</td>
+              <td>Premium</td>
+              <td><span class="badge-pill badge-success">Actif</span></td>
+            </tr>
+            <tr>
+              <td>Institut Polytechnique</td>
+              <td>Cameroun</td>
+              <td>Yaoundé</td>
+              <td>2,250</td>
+              <td>Standard</td>
+              <td><span class="badge-pill badge-success">Actif</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="../data/mock-data.js"></script>
+  <script src="../js/language.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

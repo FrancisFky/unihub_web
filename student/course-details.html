@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Details - UniHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav class="navbar"><a href="../index.html" class="navbar-brand"><i class="fas fa-graduation-cap"></i><span>UniHub</span></a><div class="navbar-nav"><button id="hamburger" class="navbar-icon-btn"><i class="fas fa-bars"></i></button><button id="theme-toggle" class="navbar-icon-btn"><i class="fas fa-moon"></i></button></div></nav>
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar"><button id="close-sidebar"><i class="fas fa-times"></i></button><nav><ul class="sidebar-nav"><li><a href="../student/dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li><li><a href="../student/courses.html" aria-current="page"><i class="fas fa-book"></i> My Courses</a></li><li><a href="../student/assignments.html"><i class="fas fa-tasks"></i> Assignments</a></li><li><a href="../student/timetable.html"><i class="fas fa-calendar"></i> Timetable</a></li><li><a href="../student/results.html"><i class="fas fa-graduation-cap"></i> Results</a></li><li><a href="../student/fees.html"><i class="fas fa-wallet"></i> Fees</a></li></ul></nav></aside>
+  <main class="main-container"><div class="main-content"><div class="page-heading"><div><h1 id="course-title">Course Details</h1><p id="course-code">Student workspace</p></div><a class="btn btn-secondary" href="../student/courses.html"><i class="fas fa-arrow-left"></i> Back</a></div><div class="dashboard-grid"><div class="stat-card"><div class="stat-label">Progress</div><div class="stat-value" id="course-progress">--</div><div class="stat-change">Current term</div></div><div class="stat-card info"><div class="stat-label">Credits</div><div class="stat-value" id="course-credits">--</div><div class="stat-change">Academic credits</div></div><div class="stat-card success"><div class="stat-label">Assignments</div><div class="stat-value" id="course-assignments">--</div><div class="stat-change">Total work</div></div></div><div class="card"><h2>Overview</h2><p id="course-description"></p><p><strong>Lecturer:</strong> <span id="course-lecturer"></span></p><p><strong>Dates:</strong> <span id="course-dates"></span></p></div></div></main>
+  <script src="../data/mock-data.js"></script><script src="../js/language.js"></script><script src="../js/theme.js"></script><script src="../js/sidebar.js"></script><script src="../js/script.js"></script>
+  <script>
+    const id = new URLSearchParams(window.location.search).get('id') || 'COURSE001';
+    const course = mockData.courses.find(item => item.id === id) || mockData.courses[0];
+    document.getElementById('course-title').textContent = course.name;
+    document.getElementById('course-code').textContent = course.code;
+    document.getElementById('course-progress').textContent = course.progress + '%';
+    document.getElementById('course-credits').textContent = course.credits;
+    document.getElementById('course-assignments').textContent = course.assignments;
+    document.getElementById('course-description').textContent = course.description;
+    document.getElementById('course-lecturer').textContent = course.lecturer;
+    document.getElementById('course-dates').textContent = course.startDate + ' to ' + course.endDate;
+  </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendrier - UniHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand"><i class="fas fa-graduation-cap"></i><span>UniHub</span></div>
+    <div class="navbar-nav">
+      <button id="hamburger" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-primary);"><i class="fas fa-bars"></i></button>
+      <button id="notification-bell" class="navbar-icon-btn has-badge"><i class="fas fa-bell"></i><span class="badge">3</span></button>
+      <button id="theme-toggle" class="navbar-icon-btn"><i class="fas fa-moon"></i></button>
+      <div class="dropdown">
+        <button id="user-button" class="navbar-icon-btn"><img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Jean" alt="Profile" style="width: 36px; height: 36px; border-radius: 50%;"></button>
+        <div id="user-menu" class="dropdown-menu">
+          <button class="dropdown-item" data-i18n="common.profile"></button>
+          <button class="dropdown-item" data-i18n="common.settings"></button>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" onclick="logout()" data-i18n="common.logout"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <aside id="sidebar" class="sidebar">
+    <button id="close-sidebar"><i class="fas fa-times"></i></button>
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="../student/dashboard.html"><i class="fas fa-chart-line"></i> <span data-i18n="student.sidebar.dashboard"></span></a></li>
+        <li><a href="../student/courses.html"><i class="fas fa-book"></i> <span data-i18n="student.sidebar.courses"></span></a></li>
+        <li><a href="../student/assignments.html"><i class="fas fa-tasks"></i> <span data-i18n="student.sidebar.assignments"></span></a></li>
+        <li><a href="../student/timetable.html"><i class="fas fa-calendar"></i> <span data-i18n="student.sidebar.timetable"></span></a></li>
+        <li><a href="../student/results.html"><i class="fas fa-graduation-cap"></i> <span data-i18n="student.sidebar.results"></span></a></li>
+        <li><a href="../student/fees.html"><i class="fas fa-wallet"></i> <span data-i18n="student.sidebar.fees"></span></a></li>
+        <li><a href="../student/announcements.html"><i class="fas fa-bullhorn"></i> <span data-i18n="student.sidebar.announcements"></span></a></li>
+        <li><a href="../student/messages.html"><i class="fas fa-envelope"></i> <span data-i18n="student.sidebar.messages"></span></a></li>
+        <li><a href="../student/calendar.html"><i class="fas fa-calendar-alt"></i> <span data-i18n="student.sidebar.calendar"></span></a></li>
+        <li><a href="../student/profile.html"><i class="fas fa-user"></i> <span data-i18n="student.sidebar.profile"></span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main-container">
+    <div class="main-content">
+      <div class="page-heading">
+        <div>
+          <h1 data-i18n="student.sidebar.calendar"></h1>
+          <p>Vue mensuelle des cours, devoirs, examens et événements importants.</p>
+        </div>
+        <a class="btn btn-primary" href="../student/timetable.html"><i class="fas fa-clock"></i> Emploi du temps</a>
+      </div>
+
+      <section class="calendar-layout" aria-label="Calendrier académique">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Octobre 2024</h2>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn btn-sm btn-secondary" aria-label="Mois précédent"><i class="fas fa-chevron-left"></i></button>
+              <button class="btn btn-sm btn-secondary" aria-label="Mois suivant"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <div class="calendar-grid">
+            <div class="calendar-day-name">Lun</div>
+            <div class="calendar-day-name">Mar</div>
+            <div class="calendar-day-name">Mer</div>
+            <div class="calendar-day-name">Jeu</div>
+            <div class="calendar-day-name">Ven</div>
+            <div class="calendar-day-name">Sam</div>
+            <div class="calendar-day-name">Dim</div>
+
+            <div class="calendar-day muted">30</div>
+            <div class="calendar-day">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day has-event">9<span class="calendar-event-dot"></span></div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day has-event">15<span class="calendar-event-dot"></span></div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day has-event">25<span class="calendar-event-dot"></span></div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day has-event">30<span class="calendar-event-dot"></span></div>
+            <div class="calendar-day">31</div>
+            <div class="calendar-day muted">1</div>
+            <div class="calendar-day muted">2</div>
+            <div class="calendar-day muted">3</div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <div class="card-header">
+            <h2 class="card-title">Événements</h2>
+          </div>
+          <div class="event-list">
+            <div class="event-item">
+              <div class="event-date">09<br><small>Oct</small></div>
+              <div>
+                <h3 style="margin: 0; font-size: 1rem;">Quiz Data Structures</h3>
+                <p style="margin: 0.25rem 0 0;">Lab 202 · 08:00</p>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-date">15<br><small>Oct</small></div>
+              <div>
+                <h3 style="margin: 0; font-size: 1rem;">Projet Python</h3>
+                <p style="margin: 0.25rem 0 0;">Date limite de soumission</p>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-date">25<br><small>Oct</small></div>
+              <div>
+                <h3 style="margin: 0; font-size: 1rem;">Maintenance portail</h3>
+                <p style="margin: 0.25rem 0 0;">02:00 - 06:00</p>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-date">30<br><small>Oct</small></div>
+              <div>
+                <h3 style="margin: 0; font-size: 1rem;">Paiement des frais</h3>
+                <p style="margin: 0.25rem 0 0;">Dernier jour sans pénalité</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </div>
+
+  <script src="../data/mock-data.js"></script>
+  <script src="../js/language.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

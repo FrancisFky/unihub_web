@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frais et Paiements - UniHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <i class="fas fa-graduation-cap"></i>
+      <span>UniHub</span>
+    </div>
+    <div class="navbar-nav">
+      <button id="hamburger" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-primary);">
+        <i class="fas fa-bars"></i>
+      </button>
+      <button id="notification-bell" class="navbar-icon-btn has-badge">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </button>
+      <button id="theme-toggle" class="navbar-icon-btn">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="dropdown">
+        <button id="user-button" class="navbar-icon-btn">
+          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Jean" alt="Profile" style="width: 36px; height: 36px; border-radius: 50%;">
+        </button>
+        <div id="user-menu" class="dropdown-menu">
+          <button class="dropdown-item" data-i18n="common.profile"></button>
+          <button class="dropdown-item" data-i18n="common.settings"></button>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" onclick="logout()" data-i18n="common.logout"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar overlay for mobile -->
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <button id="close-sidebar">
+      <i class="fas fa-times"></i>
+    </button>
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="../student/dashboard.html"><i class="fas fa-chart-line"></i> <span data-i18n="student.sidebar.dashboard"></span></a></li>
+        <li><a href="../student/courses.html"><i class="fas fa-book"></i> <span data-i18n="student.sidebar.courses"></span></a></li>
+        <li><a href="../student/assignments.html"><i class="fas fa-tasks"></i> <span data-i18n="student.sidebar.assignments"></span></a></li>
+        <li><a href="../student/timetable.html"><i class="fas fa-calendar"></i> <span data-i18n="student.sidebar.timetable"></span></a></li>
+        <li><a href="../student/results.html"><i class="fas fa-graduation-cap"></i> <span data-i18n="student.sidebar.results"></span></a></li>
+        <li><a href="../student/fees.html"><i class="fas fa-wallet"></i> <span data-i18n="student.sidebar.fees"></span></a></li>
+        <li><a href="../student/announcements.html"><i class="fas fa-bullhorn"></i> <span data-i18n="student.sidebar.announcements"></span></a></li>
+        <li><a href="../student/messages.html"><i class="fas fa-envelope"></i> <span data-i18n="student.sidebar.messages"></span></a></li>
+        <li><a href="../student/calendar.html"><i class="fas fa-calendar-alt"></i> <span data-i18n="student.sidebar.calendar"></span></a></li>
+        <li><a href="../student/profile.html"><i class="fas fa-user"></i> <span data-i18n="student.sidebar.profile"></span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <div class="main-content">
+      <h1 data-i18n="student.fees.title"></h1>
+
+      <!-- Fee Summary -->
+      <div class="dashboard-grid" style="margin-bottom: 2rem;">
+        <div class="stat-card">
+          <div class="stat-label" data-i18n="student.fees.totalFees"></div>
+          <div class="stat-value">2,500,000</div>
+          <div style="font-size: 0.9rem; color: var(--text-secondary);">Tous les semestres</div>
+        </div>
+        <div class="stat-card success">
+          <div class="stat-label" data-i18n="student.fees.paid"></div>
+          <div class="stat-value">2,350,000</div>
+          <div style="font-size: 0.9rem; color: var(--text-secondary);">94% payé</div>
+        </div>
+        <div class="stat-card danger">
+          <div class="stat-label" data-i18n="student.fees.pending"></div>
+          <div class="stat-value">150,000</div>
+          <div style="font-size: 0.9rem; color: var(--text-secondary);">À payer</div>
+        </div>
+      </div>
+
+      <!-- Payment Action -->
+      <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%); border: 2px dashed var(--color-primary);">
+        <div class="card-body">
+          <h3 style="color: var(--color-primary); margin-bottom: 1rem;"><i class="fas fa-credit-card" style="margin-right: 0.5rem;"></i> Paiement en Attente</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Vous devez payer 150,000 XAF pour le semestre 6 avant le 30 octobre 2024.</p>
+          <button class="btn btn-primary" data-i18n="student.fees.payNow"></button>
+        </div>
+      </div>
+
+      <!-- Payment History -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title" data-i18n="student.fees.paymentHistory"></h3>
+        </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Semestre</th>
+              <th data-i18n="student.fees.totalFees"></th>
+              <th data-i18n="student.fees.paid"></th>
+              <th>Statut</th>
+              <th>Date de Paiement</th>
+              <th>Reçu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Semestre 1</strong></td>
+              <td>500,000 XAF</td>
+              <td>500,000 XAF</td>
+              <td><span class="badge-pill badge-success">Payé</span></td>
+              <td>2022-08-20</td>
+              <td><a href="#" class="btn btn-sm btn-secondary"><i class="fas fa-download"></i></a></td>
+            </tr>
+            <tr>
+              <td><strong>Semestre 2</strong></td>
+              <td>500,000 XAF</td>
+              <td>500,000 XAF</td>
+              <td><span class="badge-pill badge-success">Payé</span></td>
+              <td>2023-01-15</td>
+              <td><a href="#" class="btn btn-sm btn-secondary"><i class="fas fa-download"></i></a></td>
+            </tr>
+            <tr>
+              <td><strong>Semestre 3</strong></td>
+              <td>500,000 XAF</td>
+              <td>500,000 XAF</td>
+              <td><span class="badge-pill badge-success">Payé</span></td>
+              <td>2023-08-10</td>
+              <td><a href="#" class="btn btn-sm btn-secondary"><i class="fas fa-download"></i></a></td>
+            </tr>
+            <tr>
+              <td><strong>Semestre 4</strong></td>
+              <td>500,000 XAF</td>
+              <td>500,000 XAF</td>
+              <td><span class="badge-pill badge-success">Payé</span></td>
+              <td>2024-01-20</td>
+              <td><a href="#" class="btn btn-sm btn-secondary"><i class="fas fa-download"></i></a></td>
+            </tr>
+            <tr>
+              <td><strong>Semestre 5</strong></td>
+              <td>500,000 XAF</td>
+              <td>350,000 XAF</td>
+              <td><span class="badge-pill badge-warning">Partial</span></td>
+              <td>2024-08-15</td>
+              <td><a href="#" class="btn btn-sm btn-secondary"><i class="fas fa-download"></i></a></td>
+            </tr>
+            <tr>
+              <td><strong>Semestre 6</strong></td>
+              <td>500,000 XAF</td>
+              <td>0 XAF</td>
+              <td><span class="badge-pill badge-danger">En attente</span></td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Payment Methods -->
+      <div class="card" style="margin-top: 2rem;">
+        <div class="card-header">
+          <h3 class="card-title">Méthodes de Paiement Acceptées</h3>
+        </div>
+        <div class="card-body">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+            <div style="padding: 1.5rem; border: 2px solid var(--border-color); border-radius: 0.5rem; text-align: center; cursor: pointer; transition: var(--transition);" onmouseover="this.style.borderColor='var(--color-primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+              <i class="fas fa-mobile-alt" style="font-size: 2rem; color: var(--color-primary); margin-bottom: 0.5rem;"></i>
+              <p style="font-weight: 600; color: var(--text-primary);">Airtel Money</p>
+              <small style="color: var(--text-secondary);">Paiement par SMS</small>
+            </div>
+            <div style="padding: 1.5rem; border: 2px solid var(--border-color); border-radius: 0.5rem; text-align: center; cursor: pointer; transition: var(--transition);" onmouseover="this.style.borderColor='var(--color-primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+              <i class="fas fa-mobile-alt" style="font-size: 2rem; color: var(--color-primary); margin-bottom: 0.5rem;"></i>
+              <p style="font-weight: 600; color: var(--text-primary);">MTN Mobile Money</p>
+              <small style="color: var(--text-secondary);">Paiement par SMS</small>
+            </div>
+            <div style="padding: 1.5rem; border: 2px solid var(--border-color); border-radius: 0.5rem; text-align: center; cursor: pointer; transition: var(--transition);" onmouseover="this.style.borderColor='var(--color-primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+              <i class="fas fa-credit-card" style="font-size: 2rem; color: var(--color-primary); margin-bottom: 0.5rem;"></i>
+              <p style="font-weight: 600; color: var(--text-primary);">Carte Bancaire</p>
+              <small style="color: var(--text-secondary);">Visa, Mastercard</small>
+            </div>
+            <div style="padding: 1.5rem; border: 2px solid var(--border-color); border-radius: 0.5rem; text-align: center; cursor: pointer; transition: var(--transition);" onmouseover="this.style.borderColor='var(--color-primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+              <i class="fas fa-university" style="font-size: 2rem; color: var(--color-primary); margin-bottom: 0.5rem;"></i>
+              <p style="font-weight: 600; color: var(--text-primary);">Virement Bancaire</p>
+              <small style="color: var(--text-secondary);">Transfert direct</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../data/mock-data.js"></script>
+  <script src="../js/language.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

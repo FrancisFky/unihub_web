@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance - UniHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="../index.html" class="navbar-brand"><i class="fas fa-graduation-cap"></i><span>UniHub</span></a>
+    <div class="navbar-nav">
+      <button id="hamburger" class="navbar-icon-btn"><i class="fas fa-bars"></i></button>
+      <button id="theme-toggle" class="navbar-icon-btn"><i class="fas fa-moon"></i></button>
+      <button id="user-button" class="navbar-icon-btn"><i class="fas fa-user-circle"></i></button>
+    </div>
+  </nav>
+
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <button id="close-sidebar"><i class="fas fa-times"></i></button>
+    <nav><ul class="sidebar-nav">
+        <li><a href="../lecturer/dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="../lecturer/courses.html"><i class="fas fa-book"></i> My Courses</a></li>
+        <li><a href="../lecturer/upload-materials.html"><i class="fas fa-upload"></i> Upload Materials</a></li>
+        <li><a href="../lecturer/assignments.html"><i class="fas fa-tasks"></i> Assignments</a></li>
+        <li><a href="../lecturer/gradebook.html"><i class="fas fa-book-open"></i> Gradebook</a></li>
+        <li><a href="../lecturer/attendance.html" aria-current="page"><i class="fas fa-clipboard-list"></i> Attendance</a></li>
+        <li><a href="../lecturer/messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+        <li><a href="../lecturer/announcements.html"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+    </ul></nav>
+  </aside>
+
+  <main class="main-container">
+    <div class="main-content">
+      <div class="page-heading">
+        <div>
+          <h1><i class="fas fa-clipboard-list"></i> Attendance</h1>
+          <p>Lecturer workspace</p>
+        </div>
+      </div>
+      <div class="card table-responsive"><table class="table"><thead><tr><th>Date</th><th>Course</th><th>Present</th><th>Absent</th><th>Rate</th></tr></thead><tbody><tr><td>2024-10-21</td><td>CS101</td><td>112</td><td>8</td><td>93%</td></tr><tr><td>2024-10-22</td><td>CS102</td><td>90</td><td>5</td><td>95%</td></tr><tr><td>2024-10-25</td><td>CS103</td><td>82</td><td>6</td><td>93%</td></tr></tbody></table></div>
+    </div>
+  </main>
+
+  <script src="../data/mock-data.js"></script>
+  <script src="../js/language.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

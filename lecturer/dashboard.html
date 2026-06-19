@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de Bord Enseignant - UniHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <i class="fas fa-graduation-cap"></i>
+      <span>UniHub</span>
+    </div>
+    <div class="navbar-nav">
+      <button id="hamburger" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-primary);">
+        <i class="fas fa-bars"></i>
+      </button>
+      <button id="notification-bell" class="navbar-icon-btn has-badge">
+        <i class="fas fa-bell"></i>
+        <span class="badge">2</span>
+      </button>
+      <button id="theme-toggle" class="navbar-icon-btn">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="dropdown">
+        <button id="user-button" class="navbar-icon-btn">
+          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Paul" alt="Profile" style="width: 36px; height: 36px; border-radius: 50%;">
+        </button>
+        <div id="user-menu" class="dropdown-menu">
+          <button class="dropdown-item" data-i18n="common.profile"></button>
+          <button class="dropdown-item" data-i18n="common.settings"></button>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" onclick="logout()" data-i18n="common.logout"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar overlay for mobile -->
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <button id="close-sidebar">
+      <i class="fas fa-times"></i>
+    </button>
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="../lecturer/dashboard.html"><i class="fas fa-chart-line"></i> <span data-i18n="lecturer.sidebar.dashboard"></span></a></li>
+        <li><a href="../lecturer/courses.html"><i class="fas fa-book"></i> <span data-i18n="lecturer.sidebar.courses"></span></a></li>
+        <li><a href="../lecturer/upload-materials.html"><i class="fas fa-upload"></i> <span data-i18n="lecturer.sidebar.uploadMaterials"></span></a></li>
+        <li><a href="../lecturer/assignments.html"><i class="fas fa-tasks"></i> <span data-i18n="lecturer.sidebar.assignments"></span></a></li>
+        <li><a href="../lecturer/gradebook.html"><i class="fas fa-book-open"></i> <span data-i18n="lecturer.sidebar.gradebook"></span></a></li>
+        <li><a href="../lecturer/attendance.html"><i class="fas fa-clipboard-list"></i> <span data-i18n="lecturer.sidebar.attendance"></span></a></li>
+        <li><a href="../lecturer/messages.html"><i class="fas fa-envelope"></i> <span data-i18n="lecturer.sidebar.messages"></span></a></li>
+        <li><a href="../lecturer/announcements.html"><i class="fas fa-bullhorn"></i> <span data-i18n="lecturer.sidebar.announcements"></span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <div class="main-content">
+      <!-- Welcome Section -->
+      <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); color: white; padding: 2rem; border-radius: 1rem; margin-bottom: 2rem;">
+        <h2>Bienvenue, Dr. Paul! 👋</h2>
+        <p>Vous êtes connecté en tant qu'enseignant</p>
+      </div>
+
+      <!-- Dashboard Stats -->
+      <div class="dashboard-grid">
+        <div class="stat-card info">
+          <div class="stat-label" data-i18n="lecturer.dashboard.totalStudents"></div>
+          <div class="stat-value">85</div>
+          <div class="stat-change">Inscrits dans vos cours</div>
+        </div>
+        <div class="stat-card success">
+          <div class="stat-label" data-i18n="lecturer.dashboard.myCourses"></div>
+          <div class="stat-value">3</div>
+          <div class="stat-change">En cours ce semestre</div>
+        </div>
+        <div class="stat-card warning">
+          <div class="stat-label" data-i18n="lecturer.dashboard.pendingGrading"></div>
+          <div class="stat-value">12</div>
+          <div class="stat-change">Devoirs à noter</div>
+        </div>
+        <div class="stat-card primary">
+          <div class="stat-label" data-i18n="lecturer.dashboard.upcomingClasses"></div>
+          <div class="stat-value">5</div>
+          <div class="stat-change">Cette semaine</div>
+        </div>
+      </div>
+
+      <!-- My Courses -->
+      <div class="card" style="margin-top: 2rem;">
+        <div class="card-header">
+          <h3 class="card-title" data-i18n="lecturer.dashboard.myCourses"></h3>
+          <a href="../lecturer/courses.html" class="btn btn-sm btn-primary" data-i18n="common.view"></a>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th data-i18n="lecturer.courses.courseName"></th>
+              <th data-i18n="lecturer.courses.students"></th>
+              <th data-i18n="lecturer.courses.materials"></th>
+              <th data-i18n="common.view"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Introduction to Programming</strong><br><small>CS101</small></td>
+              <td>28</td>
+              <td>5</td>
+              <td><a href="#" class="btn btn-sm btn-primary" data-i18n="common.view"></a></td>
+            </tr>
+            <tr>
+              <td><strong>Data Structures</strong><br><small>CS102</small></td>
+              <td>32</td>
+              <td>8</td>
+              <td><a href="#" class="btn btn-sm btn-primary" data-i18n="common.view"></a></td>
+            </tr>
+            <tr>
+              <td><strong>Algorithms</strong><br><small>CS201</small></td>
+              <td>25</td>
+              <td>6</td>
+              <td><a href="#" class="btn btn-sm btn-primary" data-i18n="common.view"></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="dashboard-grid" style="margin-top: 2rem;">
+        <div class="card">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="font-size: 2rem; color: var(--color-primary);">
+              <i class="fas fa-upload"></i>
+            </div>
+            <div>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;" data-i18n="lecturer.sidebar.uploadMaterials"></p>
+              <p style="margin: 0.5rem 0 0 0; color: var(--text-primary); font-weight: 600;">Ajouter du contenu</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="font-size: 2rem; color: var(--color-success);">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <div>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;" data-i18n="lecturer.sidebar.assignments"></p>
+              <p style="margin: 0.5rem 0 0 0; color: var(--text-primary); font-weight: 600;">Créer un devoir</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="font-size: 2rem; color: var(--color-warning);">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <div>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;" data-i18n="lecturer.sidebar.gradebook"></p>
+              <p style="margin: 0.5rem 0 0 0; color: var(--text-primary); font-weight: 600;">Entrer les notes</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="font-size: 2rem; color: var(--color-info);">
+              <i class="fas fa-clipboard-list"></i>
+            </div>
+            <div>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;" data-i18n="lecturer.sidebar.attendance"></p>
+              <p style="margin: 0.5rem 0 0 0; color: var(--text-primary); font-weight: 600;">Marquer la présence</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../data/mock-data.js"></script>
+  <script src="../js/language.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

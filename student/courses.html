@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Cours - UniHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <i class="fas fa-graduation-cap"></i>
+      <span>UniHub</span>
+    </div>
+    <div class="navbar-nav">
+      <button id="hamburger" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-primary);">
+        <i class="fas fa-bars"></i>
+      </button>
+      <button id="notification-bell" class="navbar-icon-btn has-badge">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </button>
+      <button id="theme-toggle" class="navbar-icon-btn">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="dropdown">
+        <button id="user-button" class="navbar-icon-btn">
+          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Jean" alt="Profile" style="width: 36px; height: 36px; border-radius: 50%;">
+        </button>
+        <div id="user-menu" class="dropdown-menu">
+          <button class="dropdown-item" data-i18n="common.profile"></button>
+          <button class="dropdown-item" data-i18n="common.settings"></button>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" onclick="logout()" data-i18n="common.logout"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar overlay for mobile -->
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <button id="close-sidebar">
+      <i class="fas fa-times"></i>
+    </button>
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="../student/dashboard.html"><i class="fas fa-chart-line"></i> <span data-i18n="student.sidebar.dashboard"></span></a></li>
+        <li><a href="../student/courses.html"><i class="fas fa-book"></i> <span data-i18n="student.sidebar.courses"></span></a></li>
+        <li><a href="../student/assignments.html"><i class="fas fa-tasks"></i> <span data-i18n="student.sidebar.assignments"></span></a></li>
+        <li><a href="../student/timetable.html"><i class="fas fa-calendar"></i> <span data-i18n="student.sidebar.timetable"></span></a></li>
+        <li><a href="../student/results.html"><i class="fas fa-graduation-cap"></i> <span data-i18n="student.sidebar.results"></span></a></li>
+        <li><a href="../student/fees.html"><i class="fas fa-wallet"></i> <span data-i18n="student.sidebar.fees"></span></a></li>
+        <li><a href="../student/announcements.html"><i class="fas fa-bullhorn"></i> <span data-i18n="student.sidebar.announcements"></span></a></li>
+        <li><a href="../student/messages.html"><i class="fas fa-envelope"></i> <span data-i18n="student.sidebar.messages"></span></a></li>
+        <li><a href="../student/calendar.html"><i class="fas fa-calendar-alt"></i> <span data-i18n="student.sidebar.calendar"></span></a></li>
+        <li><a href="../student/profile.html"><i class="fas fa-user"></i> <span data-i18n="student.sidebar.profile"></span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <div class="main-content">
+      <h1 data-i18n="student.sidebar.courses"></h1>
+
+      <!-- Course Filter -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="filter-semester" data-i18n="student.results.semester"></label>
+            <select id="filter-semester">
+              <option>Semestre 6 (Actuel)</option>
+              <option>Semestre 5</option>
+              <option>Semestre 4</option>
+              <option>Semestre 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="filter-status">Statut</label>
+            <select id="filter-status">
+              <option>Tous</option>
+              <option>Actifs</option>
+              <option>Complétés</option>
+              <option>En attente</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Cards Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+        <div class="card">
+          <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); color: white; padding: 1rem; border-radius: 0.5rem 0.5rem 0 0; margin: -1.5rem -1.5rem 1rem -1.5rem;">
+            <h3 style="color: white; margin: 0;">Introduction to Programming</h3>
+            <p style="margin: 0.5rem 0 0 0; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">CS101</p>
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Enseignant:</strong> Dr. Paul Martin</p>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Crédits:</strong> 3</p>
+          <div style="margin-bottom: 1rem;">
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Progression: 65%</p>
+            <div style="background-color: var(--bg-tertiary); border-radius: 999px; overflow: hidden; height: 8px;">
+              <div style="background-color: var(--color-success); height: 100%; width: 65%;"></div>
+            </div>
+          </div>
+          <a href="../student/course-details.html?id=COURSE001" class="btn btn-primary" style="width: 100%; justify-content: center;" data-i18n="common.view"></a>
+        </div>
+
+        <div class="card">
+          <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 1rem; border-radius: 0.5rem 0.5rem 0 0; margin: -1.5rem -1.5rem 1rem -1.5rem;">
+            <h3 style="color: white; margin: 0;">Data Structures</h3>
+            <p style="margin: 0.5rem 0 0 0; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">CS102</p>
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Enseignant:</strong> Prof. Marie Leblanc</p>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Crédits:</strong> 4</p>
+          <div style="margin-bottom: 1rem;">
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Progression: 55%</p>
+            <div style="background-color: var(--bg-tertiary); border-radius: 999px; overflow: hidden; height: 8px;">
+              <div style="background-color: var(--color-warning); height: 100%; width: 55%;"></div>
+            </div>
+          </div>
+          <a href="../student/course-details.html?id=COURSE002" class="btn btn-primary" style="width: 100%; justify-content: center;" data-i18n="common.view"></a>
+        </div>
+
+        <div class="card">
+          <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 1rem; border-radius: 0.5rem 0.5rem 0 0; margin: -1.5rem -1.5rem 1rem -1.5rem;">
+            <h3 style="color: white; margin: 0;">Web Development</h3>
+            <p style="margin: 0.5rem 0 0 0; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">CS103</p>
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Enseignant:</strong> Eng. Pierre Bernard</p>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Crédits:</strong> 3</p>
+          <div style="margin-bottom: 1rem;">
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Progression: 80%</p>
+            <div style="background-color: var(--bg-tertiary); border-radius: 999px; overflow: hidden; height: 8px;">
+              <div style="background-color: var(--color-success); height: 100%; width: 80%;"></div>
+            </div>
+          </div>
+          <a href="../student/course-details.html?id=COURSE003" class="btn btn-primary" style="width: 100%; justify-content: center;" data-i18n="common.view"></a>
+        </div>
+
+        <div class="card">
+          <div style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 1rem; border-radius: 0.5rem 0.5rem 0 0; margin: -1.5rem -1.5rem 1rem -1.5rem;">
+            <h3 style="color: white; margin: 0;">Calculus II</h3>
+            <p style="margin: 0.5rem 0 0 0; color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">MATH201</p>
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Enseignant:</strong> Prof. Sophie Laurent</p>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Crédits:</strong> 4</p>
+          <div style="margin-bottom: 1rem;">
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Progression: 45%</p>
+            <div style="background-color: var(--bg-tertiary); border-radius: 999px; overflow: hidden; height: 8px;">
+              <div style="background-color: var(--color-warning); height: 100%; width: 45%;"></div>
+            </div>
+          </div>
+          <a href="../student/course-details.html?id=COURSE004" class="btn btn-primary" style="width: 100%; justify-content: center;" data-i18n="common.view"></a>
+        </div>
+      </div>
+
+      <!-- Course Table -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title" data-i18n="student.courses.enrolledCourses"></h3>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th data-i18n="student.courses.courseCode"></th>
+              <th data-i18n="student.courses.courseName"></th>
+              <th data-i18n="student.courses.lecturer"></th>
+              <th data-i18n="student.courses.credits"></th>
+              <th>Statut</th>
+              <th data-i18n="common.view"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CS101</td>
+              <td>Introduction to Programming</td>
+              <td>Dr. Paul Martin</td>
+              <td>3</td>
+              <td><span class="badge-pill badge-success">Actif</span></td>
+              <td><a href="../student/course-details.html?id=COURSE001" class="btn btn-sm btn-primary" data-i18n="common.view"></a></td>
+            </tr>
+            <tr>
+              <td>CS102</td>
+              <td>Data Structures</td>
+              <td>Prof. Marie Leblanc</td>
+              <td>4</td>
+              <td><span class="badge-pill badge-success">Actif</span></td>
+              <td><a href="../student/course-details.html?id=COURSE002" class="btn btn-sm btn-primary" data-i18n="common.view"></a></td>
+            </tr>
+            <tr>
+              <td>CS103</td>
+              <td>Web Development</td>
+              <td>Eng. Pierre Bernard</td>
+              <td>3</td>
+              <td><span class="badge-pill badge-success">Actif</span></td>
+              <td><a href="../student/course-details.html?id=COURSE003" class="btn btn-sm btn-primary" data-i18n="common.view"></a></td>
+            </tr>
+            <tr>
+              <td>MATH201</td>
+              <td>Calculus II</td>
+              <td>Prof. Sophie Laurent</td>
+              <td>4</td>
+              <td><span class="badge-pill badge-success">Actif</span></td>
+              <td><a href="../student/course-details.html?id=COURSE004" class="btn btn-sm btn-primary" data-i18n="common.view"></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="../data/mock-data.js"></script>
+  <script src="../js/language.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

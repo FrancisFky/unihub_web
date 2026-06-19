@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - UniHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="../index.html" class="navbar-brand"><i class="fas fa-graduation-cap"></i><span>UniHub</span></a>
+    <div class="navbar-nav">
+      <button id="hamburger" class="navbar-icon-btn"><i class="fas fa-bars"></i></button>
+      <button id="theme-toggle" class="navbar-icon-btn"><i class="fas fa-moon"></i></button>
+      <button id="user-button" class="navbar-icon-btn"><i class="fas fa-user-circle"></i></button>
+    </div>
+  </nav>
+
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <button id="close-sidebar"><i class="fas fa-times"></i></button>
+    <nav><ul class="sidebar-nav">
+        <li><a href="../admin/dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="../admin/students.html"><i class="fas fa-users"></i> Students</a></li>
+        <li><a href="../admin/lecturers.html"><i class="fas fa-chalkboard-user"></i> Lecturers</a></li>
+        <li><a href="../admin/departments.html"><i class="fas fa-sitemap"></i> Departments</a></li>
+        <li><a href="../admin/courses.html"><i class="fas fa-book"></i> Courses</a></li>
+        <li><a href="../admin/timetable.html"><i class="fas fa-calendar"></i> Timetable</a></li>
+        <li><a href="../admin/finance.html"><i class="fas fa-money-bill"></i> Finance</a></li>
+        <li><a href="../admin/reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+        <li><a href="../admin/announcements.html"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+        <li><a href="../admin/settings.html" aria-current="page"><i class="fas fa-cog"></i> Settings</a></li>
+    </ul></nav>
+  </aside>
+
+  <main class="main-container">
+    <div class="main-content">
+      <div class="page-heading">
+        <div>
+          <h1><i class="fas fa-cog"></i> Settings</h1>
+          <p>Admin workspace</p>
+        </div>
+      </div>
+      <div class="card"><div class="form-row"><div class="form-group"><label>Institution Name</label><input value="Universite de Brazzaville"></div><div class="form-group"><label>Academic Year</label><input value="2024/2025"></div></div><button class="btn btn-primary">Save Settings</button></div>
+    </div>
+  </main>
+
+  <script src="../data/mock-data.js"></script>
+  <script src="../js/language.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

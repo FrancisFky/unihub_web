@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniHub - Digital Campus Platform for Schools</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-landing">
+    <div class="navbar-brand">
+      <i class="fas fa-graduation-cap"></i>
+      <span>UniHub</span>
+    </div>
+    <div class="navbar-nav">
+      <select id="language-select" style="padding: 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); background-color: var(--bg-primary); color: var(--text-primary);">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+      </select>
+      <button id="theme-toggle" class="navbar-icon-btn">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="login.html" class="btn btn-primary btn-sm" data-i18n="common.login"></a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 data-i18n="landing.hero.title"></h1>
+      <p data-i18n="landing.hero.subtitle"></p>
+      <div class="hero-buttons">
+        <button class="btn btn-hero" style="background-color: white; color: var(--color-primary);" data-i18n="landing.hero.cta" onclick="window.location.href='login.html'"></button>
+        <button class="btn btn-hero btn-outline" style="border-color: white; color: white;" data-i18n="landing.hero.demo"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features" style="background-color: var(--bg-secondary);">
+    <h2 class="section-title" data-i18n="landing.features.title"></h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-user-graduate"></i></div>
+        <h3 data-i18n="landing.features.feature1"></h3>
+        <p data-i18n="landing.features.feature1Desc"></p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-book"></i></div>
+        <h3 data-i18n="landing.features.feature2"></h3>
+        <p data-i18n="landing.features.feature2Desc"></p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-calendar"></i></div>
+        <h3 data-i18n="landing.features.feature3"></h3>
+        <p data-i18n="landing.features.feature3Desc"></p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-comments"></i></div>
+        <h3 data-i18n="landing.features.feature4"></h3>
+        <p data-i18n="landing.features.feature4Desc"></p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-wallet"></i></div>
+        <h3 data-i18n="landing.features.feature5"></h3>
+        <p data-i18n="landing.features.feature5Desc"></p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+        <h3 data-i18n="landing.features.feature6"></h3>
+        <p data-i18n="landing.features.feature6Desc"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <h2 class="section-title" data-i18n="landing.about.title"></h2>
+    <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto;" data-i18n="landing.about.description"></p>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section" id="pricing" style="background-color: var(--bg-secondary);">
+    <h2 class="section-title" data-i18n="landing.pricing.title"></h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3 data-i18n="landing.pricing.basic"></h3>
+        <div class="pricing-price">KES 49K</div>
+        <p data-i18n="landing.pricing.monthly"></p>
+        <ul class="pricing-features">
+          <li>Up to 500 <span data-i18n="landing.pricing.students"></span></li>
+          <li data-i18n="landing.features.feature1"></li>
+          <li data-i18n="landing.features.feature2"></li>
+          <li>Announcements and basic support</li>
+        </ul>
+        <button class="btn btn-secondary" style="width: 100%;">Choose Starter</button>
+      </div>
+      <div class="pricing-card featured">
+        <h3 data-i18n="landing.pricing.standard"></h3>
+        <div class="pricing-price">KES 129K</div>
+        <p data-i18n="landing.pricing.monthly"></p>
+        <ul class="pricing-features">
+          <li>Up to 2,000 <span data-i18n="landing.pricing.students"></span></li>
+          <li data-i18n="landing.features.feature1"></li>
+          <li data-i18n="landing.features.feature2"></li>
+          <li data-i18n="landing.features.feature3"></li>
+          <li data-i18n="landing.features.feature4"></li>
+        </ul>
+        <button class="btn btn-primary" style="width: 100%;">Choose Growth</button>
+      </div>
+      <div class="pricing-card">
+        <h3 data-i18n="landing.pricing.premium"></h3>
+        <div class="pricing-price">Custom</div>
+        <p data-i18n="landing.pricing.monthly"></p>
+        <ul class="pricing-features">
+          <li>10,000+ <span data-i18n="landing.pricing.students"></span></li>
+          <li data-i18n="landing.features.feature1"></li>
+          <li data-i18n="landing.features.feature2"></li>
+          <li data-i18n="landing.features.feature3"></li>
+          <li data-i18n="landing.features.feature4"></li>
+          <li data-i18n="landing.features.feature5"></li>
+        </ul>
+        <button class="btn btn-secondary" style="width: 100%;">Talk to Sales</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section">
+    <h2 class="section-title" data-i18n="landing.testimonials.title"></h2>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <p class="testimonial-text" data-i18n="landing.testimonials.testimonial1"></p>
+        <p class="testimonial-author">Universities</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text" data-i18n="landing.testimonials.testimonial2"></p>
+        <p class="testimonial-author">Colleges</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text" data-i18n="landing.testimonials.testimonial3"></p>
+        <p class="testimonial-author">High schools</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq" style="background-color: var(--bg-secondary);">
+    <h2 class="section-title" data-i18n="landing.faq.title"></h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span data-i18n="landing.faq.q1"></span>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer" data-i18n="landing.faq.a1"></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span data-i18n="landing.faq.q2"></span>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer" data-i18n="landing.faq.a2"></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span data-i18n="landing.faq.q3"></span>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer" data-i18n="landing.faq.a3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+      <h2 class="section-title" data-i18n="landing.contact.title"></h2>
+      <p data-i18n="landing.contact.message"></p>
+      <p style="margin: 2rem 0;">
+        <strong>Email:</strong> <a href="mailto:hello@unihub.school" data-i18n-html="landing.contact.email"></a><br>
+        <strong>Phone:</strong> <span data-i18n="landing.contact.phone"></span>
+      </p>
+      <button class="btn btn-primary">Request a Consultation</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>UniHub</h4>
+        <ul>
+          <li><a href="#about" data-i18n="landing.about.title"></a></li>
+          <li><a href="#features" data-i18n="landing.features.title"></a></li>
+          <li><a href="#pricing" data-i18n="landing.pricing.title"></a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#pricing">Plans</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 UniHub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="data/mock-data.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    function toggleFAQ(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector('.faq-icon');
+      
+      document.querySelectorAll('.faq-answer').forEach(item => {
+        if (item !== answer) {
+          item.classList.remove('active');
+          item.previousElementSibling.querySelector('.faq-icon').classList.remove('active');
+        }
+      });
+      
+      answer.classList.toggle('active');
+      icon.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sélection de Rôle - UniHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="top-controls">
+    <select id="language-select" style="padding: 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); background-color: var(--bg-primary); color: var(--text-primary);">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+    </select>
+    <button id="theme-toggle" class="navbar-icon-btn">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+
+  <a class="back-link" href="login.html">← <span data-i18n="common.back"></span></a>
+
+  <div class="role-selection-container">
+    <div class="role-selection-content">
+      <h1 data-i18n="common.selectRole"></h1>
+      <p data-i18n="landing.hero.subtitle"></p>
+
+      <div class="roles-grid">
+        <!-- Student Role -->
+        <div class="role-card" onclick="selectRole('student')">
+          <div class="role-icon">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <h3 class="role-title" data-i18n-text="Étudiant">Étudiant</h3>
+          <p class="role-description">Accédez à vos cours et gérez votre apprentissage</p>
+          <ul class="role-features">
+            <li data-i18n-text="Mes cours">Mes cours</li>
+            <li data-i18n-text="Mes devoirs">Mes devoirs</li>
+            <li data-i18n-text="Mes résultats">Mes résultats</li>
+            <li data-i18n-text="Paiement des frais">Paiement des frais</li>
+          </ul>
+          <button class="btn btn-primary role-select-btn" data-i18n="common.selectRole"></button>
+        </div>
+
+        <!-- Lecturer Role -->
+        <div class="role-card" onclick="selectRole('lecturer')">
+          <div class="role-icon">
+            <i class="fas fa-chalkboard-user"></i>
+          </div>
+          <h3 class="role-title" data-i18n-text="Enseignant">Enseignant</h3>
+          <p class="role-description">Gérez vos cours et interagissez avec les étudiants</p>
+          <ul class="role-features">
+            <li data-i18n-text="Mes cours">Mes cours</li>
+            <li data-i18n-text="Télécharger le matériel">Télécharger du matériel</li>
+            <li data-i18n-text="Noter les devoirs">Noter les devoirs</li>
+            <li data-i18n-text="Gérer la présence">Gérer la présence</li>
+          </ul>
+          <button class="btn btn-primary role-select-btn" data-i18n="common.selectRole"></button>
+        </div>
+
+        <!-- Admin Role -->
+        <div class="role-card" onclick="selectRole('admin')">
+          <div class="role-icon">
+            <i class="fas fa-shield"></i>
+          </div>
+          <h3 class="role-title" data-i18n-text="Administrateur">Administrateur</h3>
+          <p class="role-description">Gérez l'institution et ses utilisateurs</p>
+          <ul class="role-features">
+            <li data-i18n-text="Gestion des étudiants">Gestion des étudiants</li>
+            <li data-i18n-text="Gestion des enseignants">Gestion des enseignants</li>
+            <li data-i18n-text="Gestion des cours">Gestion des cours</li>
+            <li data-i18n-text="Finance">Finance</li>
+          </ul>
+          <button class="btn btn-primary role-select-btn" data-i18n="common.selectRole"></button>
+        </div>
+
+        <!-- Super Admin Role -->
+        <div class="role-card" onclick="selectRole('super-admin')">
+          <div class="role-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <h3 class="role-title" data-i18n-text="Super Administrateur">Super Admin</h3>
+          <p class="role-description">Gérez l'ensemble de la plateforme</p>
+          <ul class="role-features">
+            <li data-i18n-text="Gestion des institutions">Gestion des institutions</li>
+            <li data-i18n-text="Abonnements">Abonnements</li>
+            <li data-i18n-text="Analytics">Analytics</li>
+            <li data-i18n-text="Plans de tarification">Plans de tarification</li>
+          </ul>
+          <button class="btn btn-primary role-select-btn" data-i18n="common.selectRole"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/mock-data.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    function selectRole(role) {
+      localStorage.setItem('selectedRole', role);
+      mockData.currentUser.role = role;
+      window.location.href = `${role}/dashboard.html`;
+    }
+
+    // Check if user is logged in
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!localStorage.getItem('isLoggedIn')) {
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
+</body>
+</html>

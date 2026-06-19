@@ -1,0 +1,325 @@
+{
+  "common": {
+    "appName": "UniHub",
+    "welcome": "Sign in to your UniHub workspace",
+    "dashboard": "Dashboard",
+    "courses": "Courses",
+    "assignments": "Assignments",
+    "results": "Results",
+    "messages": "Messages",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "profile": "Profile",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Need a workspace for your school? Contact the UniHub team.",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "loading": "Loading...",
+    "submit": "Submit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "download": "Download",
+    "upload": "Upload",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "finish": "Finish",
+    "yes": "Yes",
+    "no": "No",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Information",
+    "selectRole": "Select Role",
+    "language": "Language",
+    "theme": "Theme",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "notifications": "Notifications",
+    "markAsRead": "Mark as Read",
+    "clearAll": "Clear All",
+    "noNotifications": "No notifications"
+  },
+  "landing": {
+    "hero": {
+      "title": "One digital campus for every school",
+      "subtitle": "UniHub helps universities, colleges, and high schools run student portals, online learning, payments, schedules, announcements, and communication from one branded workspace.",
+      "cta": "Request a school workspace",
+      "demo": "Explore the demo"
+    },
+    "features": {
+      "title": "What each school gets",
+      "feature1": "Student Portal",
+      "feature1Desc": "Students can see courses, assignments, results, fees, schedules, announcements, and profile details in one place.",
+      "feature2": "Learning Management",
+      "feature2Desc": "Teachers can organize course materials, assignments, submissions, class updates, and learning activity.",
+      "feature3": "Academic Operations",
+      "feature3Desc": "Administrators can manage courses, students, teachers, timetables, results, and institution records.",
+      "feature4": "Campus Communication",
+      "feature4Desc": "Students, teachers, and administrators can exchange messages and share official notices quickly.",
+      "feature5": "Fees and Payments",
+      "feature5Desc": "Schools can track tuition balances, payment history, pending fees, receipts, and finance reports.",
+      "feature6": "Branded School Spaces",
+      "feature6Desc": "Every institution gets its own portal, e-learning space, user roles, branding, and subscription plan."
+    },
+    "about": {
+      "title": "Built as a platform, not a single-school website",
+      "description": "UniHub is designed for many institutions to use the same core system while keeping their own identity. A university, college, or high school can create a workspace, customize its portal, manage its learners and teachers, and pay monthly or annually based on the plan it needs."
+    },
+    "pricing": {
+      "title": "Plans for different institution sizes",
+      "basic": "Starter",
+      "standard": "Growth",
+      "premium": "Enterprise",
+      "monthly": "per month, billed monthly or annually",
+      "students": "students",
+      "features": "Included features"
+    },
+    "testimonials": {
+      "title": "Who UniHub is for",
+      "testimonial1": "A university can bring student records, course activity, finance, and communication into one reliable portal.",
+      "testimonial2": "A college can launch a branded LMS without building separate systems for classes, fees, and announcements.",
+      "testimonial3": "A high school can give parents, learners, teachers, and administrators clearer access to daily academic information."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Is UniHub only for universities?",
+      "a1": "No. The platform is built for universities, colleges, high schools, training centers, and other learning institutions.",
+      "q2": "Can each school customize its portal?",
+      "a2": "Yes. Each institution can use its own name, users, academic structure, portal content, and subscription plan.",
+      "q3": "Can a school pay monthly or annually?",
+      "a3": "Yes. UniHub is designed as a subscription service with monthly and annual billing options."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "message": "Tell us about your institution and we will help you choose the right workspace.",
+      "email": "hello@unihub.school",
+      "phone": "+254 700 000 000"
+    }
+  },
+  "student": {
+    "dashboard": {
+      "title": "Dashboard",
+      "gpa": "Grade Point Average",
+      "currentCourses": "Current Courses",
+      "upcomingAssignments": "Upcoming Assignments",
+      "recentGrades": "Recent Grades",
+      "timetable": "Timetable",
+      "announcements": "Announcements",
+      "events": "Events"
+    },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "courses": "My Courses",
+      "assignments": "My Assignments",
+      "timetable": "Timetable",
+      "results": "My Results",
+      "fees": "Fees & Payments",
+      "announcements": "Announcements",
+      "messages": "Messages",
+      "calendar": "Calendar",
+      "profile": "My Profile"
+    },
+    "courses": {
+      "title": "My Courses",
+      "enrolledCourses": "Enrolled Courses",
+      "availableCourses": "Available Courses",
+      "courseCode": "Course Code",
+      "courseName": "Course Name",
+      "lecturer": "Lecturer",
+      "credits": "Credits",
+      "enroll": "Enroll",
+      "unenroll": "Unenroll"
+    },
+    "assignments": {
+      "title": "Assignments",
+      "dueDate": "Due Date",
+      "submitted": "Submitted",
+      "pending": "Pending",
+      "graded": "Graded",
+      "submit": "Submit",
+      "viewSubmission": "View Submission"
+    },
+    "fees": {
+      "title": "Fees & Payments",
+      "balance": "Balance",
+      "paid": "Paid",
+      "pending": "Pending",
+      "totalFees": "Total Fees",
+      "paymentHistory": "Payment History",
+      "payNow": "Pay Now"
+    },
+    "results": {
+      "title": "My Results",
+      "semester": "Semester",
+      "course": "Course",
+      "grade": "Grade",
+      "points": "Points",
+      "transcript": "Transcript"
+    }
+  },
+  "lecturer": {
+    "dashboard": {
+      "title": "Lecturer Dashboard",
+      "totalStudents": "Total Students",
+      "myCourses": "My Courses",
+      "upcomingClasses": "Upcoming Classes",
+      "assignments": "Assignments",
+      "pendingGrading": "Pending Grading"
+    },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "courses": "My Courses",
+      "uploadMaterials": "Upload Materials",
+      "assignments": "Assignments",
+      "gradebook": "Gradebook",
+      "attendance": "Attendance",
+      "messages": "Messages",
+      "announcements": "Announcements"
+    },
+    "courses": {
+      "title": "My Courses",
+      "courseCode": "Course Code",
+      "courseName": "Course Name",
+      "students": "Students",
+      "materials": "Materials",
+      "viewCourse": "View Course"
+    },
+    "uploadMaterials": {
+      "title": "Upload Materials",
+      "uploadDocument": "Upload Document",
+      "uploadVideo": "Upload Video",
+      "selectCourse": "Select Course",
+      "title": "Title",
+      "description": "Description",
+      "uploadFile": "Upload File"
+    },
+    "assignments": {
+      "title": "Assignments",
+      "createAssignment": "Create Assignment",
+      "dueDate": "Due Date",
+      "submissions": "Submissions",
+      "gradeAssignment": "Grade Assignment"
+    },
+    "gradebook": {
+      "title": "Gradebook",
+      "student": "Student",
+      "grade": "Grade",
+      "updateGrade": "Update Grade"
+    },
+    "attendance": {
+      "title": "Attendance",
+      "date": "Date",
+      "present": "Present",
+      "absent": "Absent",
+      "markAttendance": "Mark Attendance"
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Admin Dashboard",
+      "totalStudents": "Total Students",
+      "totalLecturers": "Total Lecturers",
+      "totalCourses": "Total Courses",
+      "totalRevenue": "Total Revenue"
+    },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "students": "Students",
+      "lecturers": "Lecturers",
+      "departments": "Departments",
+      "courses": "Courses",
+      "timetable": "Timetable",
+      "finance": "Finance",
+      "reports": "Reports",
+      "announcements": "Announcements",
+      "settings": "Settings"
+    },
+    "students": {
+      "title": "Student Management",
+      "add": "Add Student",
+      "edit": "Edit Student",
+      "delete": "Delete Student",
+      "studentId": "Student ID",
+      "name": "Name",
+      "email": "Email",
+      "program": "Program",
+      "enrollmentDate": "Enrollment Date"
+    },
+    "lecturers": {
+      "title": "Lecturer Management",
+      "add": "Add Lecturer",
+      "edit": "Edit Lecturer",
+      "delete": "Delete Lecturer",
+      "lecturerId": "Lecturer ID",
+      "name": "Name",
+      "email": "Email",
+      "department": "Department"
+    },
+    "courses": {
+      "title": "Course Management",
+      "add": "Add Course",
+      "edit": "Edit Course",
+      "delete": "Delete Course",
+      "courseCode": "Course Code",
+      "courseName": "Course Name",
+      "credits": "Credits",
+      "lecturer": "Lecturer"
+    },
+    "finance": {
+      "title": "Financial Management",
+      "totalRevenue": "Total Revenue",
+      "pendingPayments": "Pending Payments",
+      "transactions": "Transactions",
+      "generateReport": "Generate Report"
+    }
+  },
+  "superAdmin": {
+    "dashboard": {
+      "title": "Super Admin Dashboard",
+      "totalInstitutions": "Total Institutions",
+      "activeSubscriptions": "Active Subscriptions",
+      "totalRevenue": "Total Revenue",
+      "platformAnalytics": "Platform Analytics"
+    },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "institutions": "Institutions",
+      "subscriptions": "Subscriptions",
+      "analytics": "Analytics",
+      "plans": "Plans",
+      "settings": "Settings"
+    },
+    "institutions": {
+      "title": "Institution Management",
+      "add": "Add Institution",
+      "edit": "Edit Institution",
+      "delete": "Delete Institution",
+      "name": "Name",
+      "country": "Country",
+      "city": "City",
+      "email": "Email",
+      "status": "Status"
+    },
+    "subscriptions": {
+      "title": "Subscriptions",
+      "institution": "Institution",
+      "plan": "Plan",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "status": "Status"
+    }
+  }
+}

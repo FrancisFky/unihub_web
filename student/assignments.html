@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Devoirs - UniHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <i class="fas fa-graduation-cap"></i>
+      <span>UniHub</span>
+    </div>
+    <div class="navbar-nav">
+      <button id="hamburger" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-primary);">
+        <i class="fas fa-bars"></i>
+      </button>
+      <button id="notification-bell" class="navbar-icon-btn has-badge">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </button>
+      <button id="theme-toggle" class="navbar-icon-btn">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="dropdown">
+        <button id="user-button" class="navbar-icon-btn">
+          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Jean" alt="Profile" style="width: 36px; height: 36px; border-radius: 50%;">
+        </button>
+        <div id="user-menu" class="dropdown-menu">
+          <button class="dropdown-item" data-i18n="common.profile"></button>
+          <button class="dropdown-item" data-i18n="common.settings"></button>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" onclick="logout()" data-i18n="common.logout"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar overlay for mobile -->
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <button id="close-sidebar">
+      <i class="fas fa-times"></i>
+    </button>
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="../student/dashboard.html"><i class="fas fa-chart-line"></i> <span data-i18n="student.sidebar.dashboard"></span></a></li>
+        <li><a href="../student/courses.html"><i class="fas fa-book"></i> <span data-i18n="student.sidebar.courses"></span></a></li>
+        <li><a href="../student/assignments.html"><i class="fas fa-tasks"></i> <span data-i18n="student.sidebar.assignments"></span></a></li>
+        <li><a href="../student/timetable.html"><i class="fas fa-calendar"></i> <span data-i18n="student.sidebar.timetable"></span></a></li>
+        <li><a href="../student/results.html"><i class="fas fa-graduation-cap"></i> <span data-i18n="student.sidebar.results"></span></a></li>
+        <li><a href="../student/fees.html"><i class="fas fa-wallet"></i> <span data-i18n="student.sidebar.fees"></span></a></li>
+        <li><a href="../student/announcements.html"><i class="fas fa-bullhorn"></i> <span data-i18n="student.sidebar.announcements"></span></a></li>
+        <li><a href="../student/messages.html"><i class="fas fa-envelope"></i> <span data-i18n="student.sidebar.messages"></span></a></li>
+        <li><a href="../student/calendar.html"><i class="fas fa-calendar-alt"></i> <span data-i18n="student.sidebar.calendar"></span></a></li>
+        <li><a href="../student/profile.html"><i class="fas fa-user"></i> <span data-i18n="student.sidebar.profile"></span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <div class="main-content">
+      <h1 data-i18n="student.sidebar.assignments"></h1>
+
+      <!-- Assignment Filter -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="filter-course">Cours</label>
+            <select id="filter-course">
+              <option>Tous</option>
+              <option>Introduction to Programming</option>
+              <option>Data Structures</option>
+              <option>Web Development</option>
+              <option>Calculus II</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="filter-status">Statut</label>
+            <select id="filter-status">
+              <option>Tous</option>
+              <option>En attente</option>
+              <option>Soumis</option>
+              <option>Noté</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Assignments Table -->
+      <div class="card">
+        <table class="table">
+          <thead>
+            <tr>
+              <th data-i18n="student.assignments.title"></th>
+              <th data-i18n="student.courses.courseName"></th>
+              <th data-i18n="student.assignments.dueDate"></th>
+              <th>Statut</th>
+              <th>Note</th>
+              <th data-i18n="common.view"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Python Basics Project</strong><br><small style="color: var(--text-secondary);">Create a simple calculator application</small></td>
+              <td>Introduction to Programming</td>
+              <td>2024-10-15</td>
+              <td><span class="badge-pill badge-warning">En attente</span></td>
+              <td>-</td>
+              <td><button class="btn btn-sm btn-primary" data-i18n="common.submit"></button></td>
+            </tr>
+            <tr>
+              <td><strong>Implement Linked List</strong><br><small style="color: var(--text-secondary);">Implement a doubly linked list with operations</small></td>
+              <td>Data Structures</td>
+              <td>2024-10-20</td>
+              <td><span class="badge-pill badge-success">Soumis</span></td>
+              <td><strong>92/100</strong></td>
+              <td><a href="#" class="btn btn-sm btn-primary" data-i18n="student.assignments.viewSubmission"></a></td>
+            </tr>
+            <tr>
+              <td><strong>Personal Portfolio Website</strong><br><small style="color: var(--text-secondary);">Create a responsive portfolio website</small></td>
+              <td>Web Development</td>
+              <td>2024-10-25</td>
+              <td><span class="badge-pill badge-warning">En attente</span></td>
+              <td>-</td>
+              <td><button class="btn btn-sm btn-primary" data-i18n="common.submit"></button></td>
+            </tr>
+            <tr>
+              <td><strong>Integration Problems Set</strong><br><small style="color: var(--text-secondary);">Solve 20 integration problems</small></td>
+              <td>Calculus II</td>
+              <td>2024-10-10</td>
+              <td><span class="badge-pill badge-success">Soumis</span></td>
+              <td><strong>85/100</strong></td>
+              <td><a href="#" class="btn btn-sm btn-primary" data-i18n="student.assignments.viewSubmission"></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Statistics -->
+      <div class="dashboard-grid" style="margin-top: 2rem;">
+        <div class="stat-card">
+          <div class="stat-label">Total Devoirs</div>
+          <div class="stat-value">4</div>
+        </div>
+        <div class="stat-card success">
+          <div class="stat-label">Soumis</div>
+          <div class="stat-value">2</div>
+        </div>
+        <div class="stat-card warning">
+          <div class="stat-label">En attente</div>
+          <div class="stat-value">2</div>
+        </div>
+        <div class="stat-card success">
+          <div class="stat-label">Moyenne</div>
+          <div class="stat-value">88.5/100</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../data/mock-data.js"></script>
+  <script src="../js/language.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

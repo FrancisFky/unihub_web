@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion Financière - UniHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand"><i class="fas fa-graduation-cap"></i><span>UniHub</span></div>
+    <div class="navbar-nav">
+      <button id="hamburger" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer;"><i class="fas fa-bars"></i></button>
+      <button id="theme-toggle" class="navbar-icon-btn"><i class="fas fa-moon"></i></button>
+      <div class="dropdown">
+        <button id="user-button" class="navbar-icon-btn"><img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Admin" style="width: 36px; height: 36px; border-radius: 50%;"></button>
+        <div id="user-menu" class="dropdown-menu">
+          <button class="dropdown-item" onclick="logout()" data-i18n="common.logout"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <button id="close-sidebar"><i class="fas fa-times"></i></button>
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="../admin/dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="../admin/students.html"><i class="fas fa-users"></i> Students</a></li>
+        <li><a href="../admin/lecturers.html"><i class="fas fa-chalkboard-user"></i> Lecturers</a></li>
+        <li><a href="../admin/courses.html"><i class="fas fa-book"></i> Courses</a></li>
+        <li><a href="../admin/finance.html"><i class="fas fa-money-bill"></i> Finance</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main-container">
+    <div class="main-content">
+      <h1>Gestion Financière</h1>
+
+      <div class="dashboard-grid" style="margin-bottom: 2rem;">
+        <div class="stat-card success">
+          <div class="stat-label">Revenu Total</div>
+          <div class="stat-value">625M XAF</div>
+          <div class="stat-change">↑ 50M cette semaine</div>
+        </div>
+        <div class="stat-card warning">
+          <div class="stat-label">Paiements Attente</div>
+          <div class="stat-value">75M XAF</div>
+          <div class="stat-change">↑ 10M cette semaine</div>
+        </div>
+        <div class="stat-card info">
+          <div class="stat-label">Transactions</div>
+          <div class="stat-value">1,234</div>
+          <div class="stat-change">↑ 150 cette semaine</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Transactions Récentes</h3>
+          <button class="btn btn-sm btn-secondary">Générer Rapport</button>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Étudiant</th>
+              <th>Type</th>
+              <th>Montant</th>
+              <th>Statut</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024-10-19</td>
+              <td>Jean Dupont</td>
+              <td>Frais Semestre</td>
+              <td>500,000 XAF</td>
+              <td><span class="badge-pill badge-success">Complété</span></td>
+            </tr>
+            <tr>
+              <td>2024-10-18</td>
+              <td>Marie Kouala</td>
+              <td>Frais Semestre</td>
+              <td>350,000 XAF</td>
+              <td><span class="badge-pill badge-warning">Partial</span></td>
+            </tr>
+            <tr>
+              <td>2024-10-17</td>
+              <td>Pierre Ngoubou</td>
+              <td>Frais Semestre</td>
+              <td>500,000 XAF</td>
+              <td><span class="badge-pill badge-success">Complété</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="../data/mock-data.js"></script>
+  <script src="../js/language.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

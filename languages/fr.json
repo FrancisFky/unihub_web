@@ -1,0 +1,325 @@
+{
+  "common": {
+    "appName": "UniHub",
+    "welcome": "Connectez-vous à votre espace UniHub",
+    "dashboard": "Tableau de bord",
+    "courses": "Cours",
+    "assignments": "Devoirs",
+    "results": "Résultats",
+    "messages": "Messages",
+    "notifications": "Notifications",
+    "settings": "Paramètres",
+    "profile": "Profil",
+    "logout": "Déconnexion",
+    "login": "Connexion",
+    "register": "Besoin d'un espace pour votre établissement ? Contactez l'équipe UniHub.",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "rememberMe": "Se souvenir de moi",
+    "forgotPassword": "Mot de passe oublié ?",
+    "loading": "Chargement...",
+    "submit": "Soumettre",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Afficher",
+    "download": "Télécharger",
+    "upload": "Télécharger un fichier",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "finish": "Terminer",
+    "yes": "Oui",
+    "no": "Non",
+    "success": "Succès",
+    "error": "Erreur",
+    "warning": "Avertissement",
+    "info": "Information",
+    "selectRole": "Sélectionner un rôle",
+    "language": "Langue",
+    "theme": "Thème",
+    "darkMode": "Mode sombre",
+    "lightMode": "Mode clair",
+    "notifications": "Notifications",
+    "markAsRead": "Marquer comme lu",
+    "clearAll": "Effacer tout",
+    "noNotifications": "Aucune notification"
+  },
+  "landing": {
+    "hero": {
+      "title": "Un campus numérique pour chaque établissement",
+      "subtitle": "UniHub aide les universités, collèges et lycées à gérer portail étudiant, e-learning, paiements, emplois du temps, annonces et communication dans un espace personnalisé.",
+      "cta": "Demander un espace école",
+      "demo": "Explorer la démo"
+    },
+    "features": {
+      "title": "Ce que chaque établissement reçoit",
+      "feature1": "Portail étudiant",
+      "feature1Desc": "Les étudiants consultent cours, devoirs, résultats, frais, horaires, annonces et profil au même endroit.",
+      "feature2": "Gestion de l'apprentissage",
+      "feature2Desc": "Les enseignants organisent supports de cours, devoirs, soumissions, activités et mises à jour de classe.",
+      "feature3": "Opérations académiques",
+      "feature3Desc": "Les administrateurs gèrent cours, étudiants, enseignants, emplois du temps, résultats et dossiers de l'établissement.",
+      "feature4": "Communication scolaire",
+      "feature4Desc": "Étudiants, enseignants et administrateurs échangent des messages et diffusent rapidement les annonces officielles.",
+      "feature5": "Frais et paiements",
+      "feature5Desc": "Les établissements suivent soldes, paiements, frais en attente, reçus et rapports financiers.",
+      "feature6": "Espaces personnalisés",
+      "feature6Desc": "Chaque institution possède son portail, son espace e-learning, ses rôles, son identité visuelle et son abonnement."
+    },
+    "about": {
+      "title": "Une plateforme, pas un site pour une seule école",
+      "description": "UniHub est conçu pour servir plusieurs établissements avec le même système central, tout en gardant l'identité de chacun. Une université, un collège ou un lycée peut créer son espace, personnaliser son portail, gérer apprenants et enseignants, puis payer mensuellement ou annuellement selon ses besoins."
+    },
+    "pricing": {
+      "title": "Des plans selon la taille de l'établissement",
+      "basic": "Démarrage",
+      "standard": "Croissance",
+      "premium": "Entreprise",
+      "monthly": "par mois, facturé mensuellement ou annuellement",
+      "students": "étudiants",
+      "features": "Fonctionnalités incluses"
+    },
+    "testimonials": {
+      "title": "Pour quels établissements ?",
+      "testimonial1": "Une université peut réunir dossiers étudiants, cours, finance et communication dans un portail fiable.",
+      "testimonial2": "Un collège peut lancer un LMS à son image sans créer des systèmes séparés pour cours, frais et annonces.",
+      "testimonial3": "Un lycée peut donner aux apprenants, enseignants et administrateurs un accès plus clair aux informations quotidiennes."
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "q1": "UniHub est-il réservé aux universités ?",
+      "a1": "Non. La plateforme convient aux universités, collèges, lycées, centres de formation et autres établissements éducatifs.",
+      "q2": "Chaque école peut-elle personnaliser son portail ?",
+      "a2": "Oui. Chaque institution peut utiliser son nom, ses utilisateurs, sa structure académique, son contenu et son abonnement.",
+      "q3": "Un établissement peut-il payer mensuellement ou annuellement ?",
+      "a3": "Oui. UniHub est pensé comme un service par abonnement avec paiement mensuel ou annuel."
+    },
+    "contact": {
+      "title": "Nous Contacter",
+      "message": "Parlez-nous de votre établissement et nous vous aiderons à choisir le bon espace.",
+      "email": "hello@unihub.school",
+      "phone": "+254 700 000 000"
+    }
+  },
+  "student": {
+    "dashboard": {
+      "title": "Tableau de bord",
+      "gpa": "Moyenne générale",
+      "currentCourses": "Cours actuels",
+      "upcomingAssignments": "Devoirs à venir",
+      "recentGrades": "Notes récentes",
+      "timetable": "Emploi du temps",
+      "announcements": "Annonces",
+      "events": "Événements"
+    },
+    "sidebar": {
+      "dashboard": "Tableau de bord",
+      "courses": "Mes cours",
+      "assignments": "Mes devoirs",
+      "timetable": "Emploi du temps",
+      "results": "Mes résultats",
+      "fees": "Frais et paiements",
+      "announcements": "Annonces",
+      "messages": "Messages",
+      "calendar": "Calendrier",
+      "profile": "Mon profil"
+    },
+    "courses": {
+      "title": "Mes Cours",
+      "enrolledCourses": "Cours inscrits",
+      "availableCourses": "Cours disponibles",
+      "courseCode": "Code du cours",
+      "courseName": "Nom du cours",
+      "lecturer": "Enseignant",
+      "credits": "Crédits",
+      "enroll": "S'inscrire",
+      "unenroll": "Se désinscrire"
+    },
+    "assignments": {
+      "title": "Devoirs",
+      "dueDate": "Date d'échéance",
+      "submitted": "Soumis",
+      "pending": "En attente",
+      "graded": "Noté",
+      "submit": "Soumettre",
+      "viewSubmission": "Voir la soumission"
+    },
+    "fees": {
+      "title": "Frais et Paiements",
+      "balance": "Solde",
+      "paid": "Payé",
+      "pending": "En attente",
+      "totalFees": "Total des frais",
+      "paymentHistory": "Historique des paiements",
+      "payNow": "Payer maintenant"
+    },
+    "results": {
+      "title": "Mes Résultats",
+      "semester": "Semestre",
+      "course": "Cours",
+      "grade": "Note",
+      "points": "Points",
+      "transcript": "Bulletin de notes"
+    }
+  },
+  "lecturer": {
+    "dashboard": {
+      "title": "Tableau de bord enseignant",
+      "totalStudents": "Nombre d'étudiants",
+      "myCourses": "Mes cours",
+      "upcomingClasses": "Prochains cours",
+      "assignments": "Devoirs",
+      "pendingGrading": "En attente de notation"
+    },
+    "sidebar": {
+      "dashboard": "Tableau de bord",
+      "courses": "Mes cours",
+      "uploadMaterials": "Télécharger le matériel",
+      "assignments": "Devoirs",
+      "gradebook": "Carnet de notes",
+      "attendance": "Présence",
+      "messages": "Messages",
+      "announcements": "Annonces"
+    },
+    "courses": {
+      "title": "Mes Cours",
+      "courseCode": "Code du cours",
+      "courseName": "Nom du cours",
+      "students": "Étudiants",
+      "materials": "Matériel",
+      "viewCourse": "Voir le cours"
+    },
+    "uploadMaterials": {
+      "title": "Télécharger le Matériel",
+      "uploadDocument": "Télécharger un document",
+      "uploadVideo": "Télécharger une vidéo",
+      "selectCourse": "Sélectionner un cours",
+      "title": "Titre",
+      "description": "Description",
+      "uploadFile": "Télécharger le fichier"
+    },
+    "assignments": {
+      "title": "Devoirs",
+      "createAssignment": "Créer un devoir",
+      "dueDate": "Date d'échéance",
+      "submissions": "Soumissions",
+      "gradeAssignment": "Noter le devoir"
+    },
+    "gradebook": {
+      "title": "Carnet de notes",
+      "student": "Étudiant",
+      "grade": "Note",
+      "updateGrade": "Mettre à jour la note"
+    },
+    "attendance": {
+      "title": "Présence",
+      "date": "Date",
+      "present": "Présent",
+      "absent": "Absent",
+      "markAttendance": "Marquer la présence"
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Tableau de bord administrateur",
+      "totalStudents": "Nombre total d'étudiants",
+      "totalLecturers": "Nombre total d'enseignants",
+      "totalCourses": "Nombre total de cours",
+      "totalRevenue": "Revenu total"
+    },
+    "sidebar": {
+      "dashboard": "Tableau de bord",
+      "students": "Étudiants",
+      "lecturers": "Enseignants",
+      "departments": "Départements",
+      "courses": "Cours",
+      "timetable": "Emploi du temps",
+      "finance": "Finance",
+      "reports": "Rapports",
+      "announcements": "Annonces",
+      "settings": "Paramètres"
+    },
+    "students": {
+      "title": "Gestion des Étudiants",
+      "add": "Ajouter un étudiant",
+      "edit": "Modifier l'étudiant",
+      "delete": "Supprimer l'étudiant",
+      "studentId": "ID d'étudiant",
+      "name": "Nom",
+      "email": "E-mail",
+      "program": "Programme",
+      "enrollmentDate": "Date d'inscription"
+    },
+    "lecturers": {
+      "title": "Gestion des Enseignants",
+      "add": "Ajouter un enseignant",
+      "edit": "Modifier l'enseignant",
+      "delete": "Supprimer l'enseignant",
+      "lecturerId": "ID d'enseignant",
+      "name": "Nom",
+      "email": "E-mail",
+      "department": "Département"
+    },
+    "courses": {
+      "title": "Gestion des Cours",
+      "add": "Ajouter un cours",
+      "edit": "Modifier le cours",
+      "delete": "Supprimer le cours",
+      "courseCode": "Code du cours",
+      "courseName": "Nom du cours",
+      "credits": "Crédits",
+      "lecturer": "Enseignant"
+    },
+    "finance": {
+      "title": "Gestion Financière",
+      "totalRevenue": "Revenu total",
+      "pendingPayments": "Paiements en attente",
+      "transactions": "Transactions",
+      "generateReport": "Générer un rapport"
+    }
+  },
+  "superAdmin": {
+    "dashboard": {
+      "title": "Tableau de bord super administrateur",
+      "totalInstitutions": "Nombre total d'institutions",
+      "activeSubscriptions": "Abonnements actifs",
+      "totalRevenue": "Revenu total",
+      "platformAnalytics": "Analyse de la plateforme"
+    },
+    "sidebar": {
+      "dashboard": "Tableau de bord",
+      "institutions": "Institutions",
+      "subscriptions": "Abonnements",
+      "analytics": "Analyse",
+      "plans": "Plans",
+      "settings": "Paramètres"
+    },
+    "institutions": {
+      "title": "Gestion des Institutions",
+      "add": "Ajouter une institution",
+      "edit": "Modifier l'institution",
+      "delete": "Supprimer l'institution",
+      "name": "Nom",
+      "country": "Pays",
+      "city": "Ville",
+      "email": "E-mail",
+      "status": "Statut"
+    },
+    "subscriptions": {
+      "title": "Abonnements",
+      "institution": "Institution",
+      "plan": "Plan",
+      "startDate": "Date de début",
+      "endDate": "Date de fin",
+      "status": "Statut"
+    }
+  }
+}
